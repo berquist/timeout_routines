@@ -7,7 +7,6 @@ cache:
 
 install:
     - pip install -r requirements.txt
-    - pip install codecov
 
 jobs:
     include:
@@ -15,7 +14,4 @@ jobs:
           script:
               - echo "python version $(python --version) running"
               - echo "pip version $(pip --version) running"
-              - make checalabasterk test
-
-after_success:
-  - codecov -t CODE_COV_TOKEN_HERE
+              - make coverage test
